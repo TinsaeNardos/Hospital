@@ -33,12 +33,12 @@ export async function sendEmail(formData: FormData) {
             html: `<p>You have a contact form submission:</p><ul><li>Name: ${name}</li><li>Email: ${email}</li><li>Message: ${message}</li></ul>`
         });
         console.log("Email sent successfully:", data);
-        var v=1;
+        const v=1;
         redirect(`/contactus?v=${v}`);
         //return { success: true }; // Indicate success - Can't use with redirect
     } catch (error) {
         console.error("Error sending email:", error);
-              var c=1;
+              const c=1;
         redirect(`/contactus?v=${c}`);
         //return { success: false, error: error.message }; // Indicate failure - Can't use with redirect
     }

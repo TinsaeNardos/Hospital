@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image'; // Import the Image component
 
 export default function Services() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
@@ -45,10 +46,12 @@ export default function Services() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <img
-            src="/serv1.jpg"
+          <Image
+            src="/serv1.jpg" // Use Image component
             alt="Service Image"
-            className="rounded-lg shadow-lg w-full h-auto max-w-md" // Increased max-width for the image
+            className="rounded-lg shadow-lg w-full h-auto max-w-md"
+            width={800} // Provide width
+            height={500} // Provide height
           />
         </motion.div>
 
