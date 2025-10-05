@@ -1,12 +1,10 @@
-'use client';
+"use client";
 
 import { sendEmail } from "@/lib/resend";
-import { Button } from "@/components/ui/button"; 
-import { Input } from "@/components/ui/input"; 
-import { Textarea } from "@/components/ui/textarea"; 
-import { Card } from "@/components/ui/card"; 
-import { useSearchParams } from "next/navigation";
-import { Suspense } from 'react'; // Import Suspense
+import { Button } from "@/components/ui/button"; // Adjust import based on your folder structure
+import { Input } from "@/components/ui/input";  // Adjust import based on your folder structure
+import { Textarea } from "@/components/ui/textarea"; // Adjust import based on your folder structure
+import { Card } from "@/components/ui/card"; // Import Card for the text column
 
 export default function ContactForm() {
     return (
@@ -14,9 +12,18 @@ export default function ContactForm() {
             <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto space-y-4 md:space-y-0">
                 {/* Contact Form Column */}
                 <Card className="flex-1 p-6">
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <FormWithSearchParams />
-                    </Suspense>
+                    <form action={sendEmail} className="space-y-4">
+                        <label htmlFor="name">Name:</label>
+                        <Input type="text" id="name" name="name" required />
+
+                        <label htmlFor="email">Email:</label>
+                        <Input type="email" id="email" name="email" required />
+
+                        <label htmlFor="message">Message:</label>
+                        <Textarea id="message" name="message" required />
+
+                        <Button type="submit" className="w-full">Send</Button>
+                    </form>
                 </Card>
 
                 {/* Text Column */}
@@ -25,8 +32,8 @@ export default function ContactForm() {
                     <p className="mb-4">
                         Thank you for considering K & K Medical Transport for your non-emergency medical transportation needs. We are here to assist you and look forward to answering any questions you may have or helping you schedule a transportation service.
                     </p>
-                    <p className="mb-2"><span className="mr-2">📧</span>kkmedicaltransport@gmail.com</p>
-                    <p className="mb-2"><span className="mr-2">📞</span>512 945-4047</p>
+                    <p className="mb-2"><strong>Email:</strong> kkmedicaltransport@gmail.com</p>
+                    <p className="mb-2"><strong>Phone:</strong> 512 945-4047</p>
                     <h3 className="font-bold mt-4">Business Hours</h3>
                     <ul className="list-disc list-inside mt-2">
                         <li>Monday: 7 AM–7 PM</li>
@@ -40,29 +47,5 @@ export default function ContactForm() {
                 </Card>
             </div>
         </main>
-    );
-}
-
-// New component to handle search params
-function FormWithSearchParams() {
-    const searchParams = useSearchParams(); // Access search params
-    const v = searchParams.get('v'); // Get the value of 'v'
-    const c = searchParams.get('c'); // Get the value of 'c'
-
-    return (
-        <form action={sendEmail} className="space-y-4">
-            <label htmlFor="name">Name:</label>
-            <Input type="text" id="name" name="name" required />
-
-            <label htmlFor="email">Email:</label>
-            <Input type="email" id="email" name="email" required />
-
-            <label htmlFor="message">Message:</label>
-            <Textarea id="message" name="message" required />
-
-            <Button type="submit" className="w-full">Send</Button>
-            {v && <p>Email sent successfully!</p>}
-            {c && <p>Email not sent successfully. Resend!</p>}
-        </form>
     );
 }
