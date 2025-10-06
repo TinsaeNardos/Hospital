@@ -19,16 +19,17 @@ export default function Hero() {
     <section className="h-screen relative flex items-center justify-center overflow-hidden pt-16"> 
     
    <div className="absolute inset-0">
-  <video 
-    autoPlay 
-    muted 
-    loop 
-    className="object-cover w-full h-full" 
-    style={{ filter: 'none' }} // Ensure no filters are applied
-  >
-    <source src="/vidd.MOV" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+ <video 
+  autoPlay 
+  muted 
+  loop 
+  playsInline
+  className="object-cover w-full h-full"
+>
+  <source src="/vidd.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
   <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay */}
 </div>
       <div className="relative z-10 text-white text-center px-4 max-w-4xl">
