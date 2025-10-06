@@ -8,19 +8,29 @@ export default function Hero() {
   const [contactInfo, setContactInfo] = useState<string | null>(null);
 
   const handleCallClick = () => {
-    setContactInfo("+23976");
+    setContactInfo("+2519046654");
   };
 
   const handleEmailClick = () => {
-    setContactInfo("tinsae@email");
+    setContactInfo("Latex@email");
   };
 
   return (
     <section className="h-screen relative flex items-center justify-center overflow-hidden pt-16"> 
-      <div className="absolute inset-0">
-        <Image src="/hofront.jpg" alt="hospital background" fill className="object-cover object-center" />
-        <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay */}
-      </div>
+    
+   <div className="absolute inset-0">
+  <video 
+    autoPlay 
+    muted 
+    loop 
+    className="object-cover w-full h-full" 
+    style={{ filter: 'none' }} // Ensure no filters are applied
+  >
+    <source src="/vidd.MOV" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay */}
+</div>
       <div className="relative z-10 text-white text-center px-4 max-w-4xl">
         <div>
           <motion.h1 
@@ -37,7 +47,7 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.7 }} 
             className="text-xl md:text-2xl mb-8 font-light leading-relaxed max-w-3xl mx-auto"
           >
-            When every moment counts, trust K & K Medical Transport for reliable and compassionate non-emergency medical transportation services. 
+           Your Trusted Partner in Safe and Reliable Medical Transport
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 12 }} 

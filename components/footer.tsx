@@ -44,14 +44,13 @@ export default function footer()
         <div>
           <h4 className="text-lg font-bold font-heading mb-4">Contact Info</h4>
           <div className="space-y-3">
-            <p><strong> Phone:
-           </strong>    <br />    09114567890987</p>
-              <p><strong>Email:</strong>
-              <br />
-              info@hospital
+            <p><span className="mr-2">📞</span>      09114567890987</p>
+              <p><span className="mr-2">📧</span> 
+          
+              Letx@gmail.com
               </p>
-              <p><strong>Location:</strong>
-              <br />
+              <p><span className="mr-2">📍</span>
+        
               megenagha,civil service</p>
           </div>
         </div>

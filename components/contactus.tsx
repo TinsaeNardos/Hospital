@@ -32,8 +32,8 @@ export default function ContactForm() {
                     <p className="mb-4">
                         Thank you for considering K & K Medical Transport for your non-emergency medical transportation needs. We are here to assist you and look forward to answering any questions you may have or helping you schedule a transportation service.
                     </p>
-                    <p className="mb-2"><strong>Email:</strong> kkmedicaltransport@gmail.com</p>
-                    <p className="mb-2"><strong>Phone:</strong> 512 945-4047</p>
+                    <p className="mb-2">  <span className="mr-2">📧</span> Letextransport@gmail.com</p>
+                    <p className="mb-2"><span className="mr-2">📞</span> 512 945-4047</p>
                     <h3 className="font-bold mt-4">Business Hours</h3>
                     <ul className="list-disc list-inside mt-2">
                         <li>Monday: 7 AM–7 PM</li>
