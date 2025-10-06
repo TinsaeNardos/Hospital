@@ -8,8 +8,8 @@ import { Card } from "@/components/ui/card"; // Import Card for the text column
 
 export default function ContactForm() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto space-y-4 md:space-y-0">
+        <main className="flex min-h-screen flex-col items-center justify-between p-6 md:p-24">
+  <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto space-y-4 md:space-y-0">
                 {/* Contact Form Column */}
                 <Card className="flex-1 p-6">
                     <form action={sendEmail} className="space-y-4">
@@ -30,7 +30,7 @@ export default function ContactForm() {
                 <Card className="flex-1 p-6 mt-4 md:mt-0 md:ml-4">
                     <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
                     <p className="mb-4">
-                        Thank you for considering K & K Medical Transport for your non-emergency medical transportation needs. We are here to assist you and look forward to answering any questions you may have or helping you schedule a transportation service.
+                       Thank you for choosing LATX Transportation for your non-emergency medical transport needs. We are here to support you and are eager to answer any questions you may have or assist you in scheduling a transportation service.
                     </p>
                     <p className="mb-2">  <span className="mr-2">📧</span> Letextransport@gmail.com</p>
                     <p className="mb-2"><span className="mr-2">📞</span> 512 945-4047</p>

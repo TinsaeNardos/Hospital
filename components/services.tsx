@@ -23,7 +23,7 @@ export default function Services() {
       {/* Full Row Background Photo */}
       <motion.div
         className="relative w-full h-64 bg-cover bg-center p-24 mt-16"
-        style={{ backgroundImage: 'url(/serv1.jpg)' }}
+        style={{ backgroundImage: 'url(/services.jpg)' }}
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -47,7 +47,7 @@ export default function Services() {
           transition={{ duration: 0.7 }}
         >
           <Image
-            src="/serv1.jpg" // Use Image component
+            src="/vers.jpg" // Use Image component
             alt="Service Image"
             className="rounded-lg shadow-lg w-full h-auto max-w-md"
             width={800} // Provide width
@@ -64,8 +64,7 @@ export default function Services() {
         >
           <h2 className="text-2xl font-semibold mb-4">Services Provided</h2>
           <p>
-            At K & K Medical Transport, we understand the importance of reliable transportation during non-medical emergency situations.
-            We offer a range of transportation services designed to meet your specific needs while maintaining affordability and transparency.
+           At LATX Transportation, we appreciate how crucial reliable transport is for non-emergency medical needs. Our diverse range of services is designed to cater to your individual requirements while ensuring cost-effectiveness and clear communication. We are committed to providing the care and assistance you need throughout your travel experience.
           </p>
         </motion.div>
       </div>
