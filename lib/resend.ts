@@ -14,15 +14,21 @@ export async function sendEmail(formData: FormData) {
         resend = new Resend(API_KEY);
      console.log("Object Resend set up properly");}
      catch (err) {
-        console.log(err);
+       return { success: false, message: "API key is not defined." };
     }
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
+
+
+
+const name = formData.get("name") as string;
+const phoneNumber = formData.get("phoneNumber") as string;
+const pickupAddress = formData.get("pickupAddress") as string;
+const dropoffLocation = formData.get("dropoffLocation") as string;
+const appointmentDateTime = formData.get("appointmentDateTime") as string;
+const roundTrip = formData.get("roundTrip") as string;
+const wheelchairAccessible = formData.get("wheelchairAccessible") as string;
+const message = formData.get("message") as string;
     if (!resend) {
-      console.error("Resend object is not initialized. Aborting email send.");
-      redirect('/error');
-      return;
+    return { success: false, message: "Resend object is not initialized." };
     }
 
     try {
@@ -30,16 +36,25 @@ export async function sendEmail(formData: FormData) {
             to: "tinsaetesfaye2003@gmail.com",
             from: "OrcDev <onboarding@resend.dev>",
             subject: "Contact Form Submission",
-            html: `<p>You have a contact form submission:</p><ul><li>Name: ${name}</li><li>Email: ${email}</li><li>Message: ${message}</li></ul>`
+            html: `    <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #333;">
+                <h2 style="color: #4A90E2;">New Contact Form Submission</h2>
+        <hr style="border: 1px solid #4A90E2; margin: 10px 0;">
+        <ul style="list-style-type: none; padding: 0;">
+        
+      <li><strong>Full Name:</strong> ${name}</li>
+          <li><strong>Phone Number:</strong> ${phoneNumber}</li>
+            <li><strong>Pickup Address:</strong> ${pickupAddress}</li>
+            <li><strong>Drop-off Location:</strong> ${dropoffLocation}</li>
+            <li><strong>Appointment Date & Time:</strong> ${appointmentDateTime}</li>
+            <li><strong>Round Trip:</strong> ${roundTrip}</li>
+       <li><strong>Wheelchair Accessible:</strong> ${wheelchairAccessible}</li>
+        <li><strong>Notes:</strong> ${message}</li>
+    </ul></div>`
         });
-        console.log("Email sent successfully:", data);
-     
-        redirect("/contactus");
+         return { success: true, message: "Email sent successfully!" };
         //return { success: true }; // Indicate success - Can't use with redirect
     } catch (error) {
-        console.error("Error sending email:", error);
-            
-        redirect("/contactus");
+        return { success: false, message: "Error sending email." };
         //return { success: false, error: error.message }; // Indicate failure - Can't use with redirect
     }
 }

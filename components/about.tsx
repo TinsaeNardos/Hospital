@@ -62,7 +62,7 @@ export default function About() {
           viewport={{ once: false }}
         >
           <div className="md:w-1/2">
-            <Image src="/in.jpg" alt="Owner 2" width={500} height={500} className="rounded-lg" />
+            <Image src="/fr3.jpg" alt="Owner 2" width={500} height={500} className="rounded-lg" />
           </div>
           <div className="md:w-1/2">
             <h2 className="text-2xl font-semibold">Our Mission</h2>
@@ -79,7 +79,7 @@ export default function About() {
           viewport={{ once: false }}
         >
           <div className="md:w-1/2 md:order-2">
-            <Image src="/serv.jpg" alt="Owner 3" width={500} height={500} className="rounded-lg" />
+            <Image src="/in.jpg" alt="Owner 3" width={500} height={500} className="rounded-lg" />
           </div>
           <div className="md:w-1/2 md:order-1">
             <h2 className="text-2xl font-semibold">Our Services</h2>

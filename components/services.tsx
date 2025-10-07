@@ -8,14 +8,12 @@ export default function Services() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const services = [
-    { name: 'Non-emergency medical transportation', description: 'Reliable transportation for non-emergency medical appointments.' },
-    { name: 'Wheelchair transportation', description: 'Specialized vehicles for wheelchair-bound passengers.' },
-    { name: 'Ambulance services', description: 'Emergency transport with trained medical personnel.' },
-    { name: 'Event transportation', description: 'Transportation services for events and gatherings.' },
-    { name: 'Long-distance transportation', description: 'Comfortable long-distance travel solutions.' },
-    { name: 'Medical escort services', description: 'Trained personnel to accompany patients during transport.' },
-    { name: 'Airport transportation', description: 'Convenient transport to and from airports.' },
-    { name: 'Patient transfer services', description: 'Safe transfers between facilities.' },
+    { name: 'Ambulatory Transport', description: 'Safe rides for patients who can walk independently.' },
+    { name: 'Wheelchair Transportation', description: 'Accessible vehicles and trained drivers to assist wheelchair users with care and safety.' },
+    { name: 'Dialysis Transportation', description: 'Recurring rides for patients needing regular dialysis treatments.' },
+    { name: ' Clinic & Hospital Appointments', description: 'On-time service for medical visits, procedures, and therapy sessions.' },
+    { name: ' Flexible Scheduling', description: ' Weekdays, weekends, and after-hours rides available.' },
+   
   ];
 
   return (
@@ -23,7 +21,7 @@ export default function Services() {
       {/* Full Row Background Photo */}
       <motion.div
         className="relative w-full h-64 bg-cover bg-center p-24 mt-16"
-        style={{ backgroundImage: 'url(/services.jpg)' }}
+        style={{ backgroundImage: 'url(/fr1.jpg)' }}
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -47,7 +45,7 @@ export default function Services() {
           transition={{ duration: 0.7 }}
         >
           <Image
-            src="/vers.jpg" // Use Image component
+            src="/fr2.jpg" // Use Image component
             alt="Service Image"
             className="rounded-lg shadow-lg w-full h-auto max-w-md"
             width={800} // Provide width
@@ -62,9 +60,9 @@ export default function Services() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-2xl font-semibold mb-4">Services Provided</h2>
+          <h2 className="text-2xl font-semibold mb-4">Transportation You Can Count On</h2>
           <p>
-           At LATX Transportation, we appreciate how crucial reliable transport is for non-emergency medical needs. Our diverse range of services is designed to cater to your individual requirements while ensuring cost-effectiveness and clear communication. We are committed to providing the care and assistance you need throughout your travel experience.
+           We specialize in safe and reliable non-emergency medical transportation, providing both ambulatory and wheelchair-accessible rides for patients and facilities.
           </p>
         </motion.div>
       </div>

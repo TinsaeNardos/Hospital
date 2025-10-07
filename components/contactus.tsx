@@ -1,25 +1,72 @@
 "use client";
-
+import { motion } from 'framer-motion';
 import { sendEmail } from "@/lib/resend";
-import { Button } from "@/components/ui/button"; // Adjust import based on your folder structure
-import { Input } from "@/components/ui/input";  // Adjust import based on your folder structure
-import { Textarea } from "@/components/ui/textarea"; // Adjust import based on your folder structure
-import { Card } from "@/components/ui/card"; // Import Card for the text column
+import { Button } from "@/components/ui/button"; 
+import { Input } from "@/components/ui/input";  
+import { Textarea } from "@/components/ui/textarea"; 
+import { Card } from "@/components/ui/card"; 
+import { useState } from 'react';
+import React from 'react';
 
 export default function ContactForm() {
+    const [message, setMessage] = useState(""); // State for success messages
+    const [error, setError] = useState(""); // State for error messages
+
+    // Explicitly type the event parameter
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault(); // Prevent default form submission
+        setMessage(""); // Reset message
+        setError(""); // Reset error
+
+        const formData = new FormData(event.currentTarget);
+        
+        const response = await sendEmail(formData); // Call your sendEmail function
+
+        if (response.success) {
+            setMessage(response.message); // Set success message
+        } else {
+            setError(response.message); // Set error message
+        }
+    };
+
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-6 md:p-24">
-  <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto space-y-4 md:space-y-0">
+            <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto space-y-4 md:space-y-0">
                 {/* Contact Form Column */}
                 <Card className="flex-1 p-6">
-                    <form action={sendEmail} className="space-y-4">
-                        <label htmlFor="name">Name:</label>
+                    <form onSubmit={handleSubmit} className="space-y-4"> {/* Use onSubmit instead of action */}
+                        <label htmlFor="name">Full Name</label>
                         <Input type="text" id="name" name="name" required />
 
-                        <label htmlFor="email">Email:</label>
-                        <Input type="email" id="email" name="email" required />
+                        <label htmlFor="phoneNumber">Phone Number:</label>
+                        <Input type="tel" id="phoneNumber" name="phoneNumber" required />
 
-                        <label htmlFor="message">Message:</label>
+                        <label htmlFor="pickupAddress">Pickup Address:</label>
+                        <Input type="text" id="pickupAddress" name="pickupAddress" required />
+
+                        <label htmlFor="dropoffLocation">Drop-off Location:</label>
+                        <Input type="text" id="dropoffLocation" name="dropoffLocation" required />
+
+                        <label htmlFor="appointmentDateTime">Appointment Date & Time:</label>
+                        <Input type="datetime-local" id="appointmentDateTime" name="appointmentDateTime" required />
+
+                        <label htmlFor="roundTrip">Round Trip (Yes/No):</label>
+                        <select id="roundTrip" name="roundTrip" required>
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                        <br />
+
+                        <label htmlFor="wheelchairAccessible">Wheelchair Accessible (Yes/No):</label>
+                        <select id="wheelchairAccessible" name="wheelchairAccessible" required>
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                        <br />
+
+                        <label htmlFor="message">Notes/Special Instructions:</label>
                         <Textarea id="message" name="message" required />
 
                         <Button type="submit" className="w-full">Send</Button>
@@ -28,22 +75,62 @@ export default function ContactForm() {
 
                 {/* Text Column */}
                 <Card className="flex-1 p-6 mt-4 md:mt-0 md:ml-4">
-                    <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-                    <p className="mb-4">
-                       Thank you for choosing LATX Transportation for your non-emergency medical transport needs. We are here to support you and are eager to answer any questions you may have or assist you in scheduling a transportation service.
-                    </p>
-                    <p className="mb-2">  <span className="mr-2">📧</span> Letextransport@gmail.com</p>
-                    <p className="mb-2"><span className="mr-2">📞</span> 512 945-4047</p>
-                    <h3 className="font-bold mt-4">Business Hours</h3>
-                    <ul className="list-disc list-inside mt-2">
-                        <li>Monday: 7 AM–7 PM</li>
-                        <li>Tuesday: 7 AM–7 PM</li>
-                        <li>Wednesday: 7 AM–7 PM</li>
-                        <li>Thursday: 7 AM–7 PM</li>
-                        <li>Friday: 7 AM–7 PM</li>
-                        <li>Saturday: 7 AM–7 PM</li>
+                    <motion.h2
+                        className="text-2xl font-bold mb-4"
+                        initial={{ opacity: 0, y: 20 }} // Initial state
+                        animate={{ opacity: 1, y: 0 }}   // Final state
+                        transition={{ duration: 0.6 }}    // Animation duration
+                    >
+                        Let's Get You There Safely
+                    </motion.h2>
+                    <motion.p
+                        className="mb-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }} // Slight delay
+                    >
+                        Ready to schedule your next ride? Whether you need a one-time trip or ongoing transportation, LATX Transportation is here to make travel to your medical appointments simple, safe, and dependable.
+                    </motion.p>
+                    <motion.p
+                        className="mb-2"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }} // Slight delay
+                    >
+                        <span className="mr-2">📧 Email</span> Letextransport@gmail.com
+                    </motion.p>
+                    <motion.p
+                        className="mb-2"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6 }} // Slight delay
+                    >
+                        <span className="mr-2">📞 Call/Text</span> 512 945-4047
+                    </motion.p>
+                    <motion.h3
+                        className="font-bold mt-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8 }} // Slight delay
+                    >
+                        <span className="mr-2">🕒</span> Business Hours
+                    </motion.h3>
+                    <motion.ul
+                        className="list-disc list-inside mt-2"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1 }} // Slight delay
+                    >
+                        <li>Monday: 7 AM - 7 PM</li>
+                        <li>Tuesday: 7 AM - 7 PM</li>
+                        <li>Wednesday: 7 AM - 7 PM</li>
+                        <li>Thursday: 7 AM - 7 PM</li>
+                        <li>Friday: 7 AM - 7 PM</li>
+                        <li>Saturday: 7 AM - 7 PM</li>
                         <li>Sunday: Closed</li>
-                    </ul>
+                    </motion.ul>
+                    {message && <p className="text-green-500 mt-4">{message}</p>}
+                    {error && <p className="text-red-500 mt-4">{error}</p>}
                 </Card>
             </div>
         </main>
