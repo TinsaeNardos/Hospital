@@ -71,6 +71,8 @@ export default function ContactForm() {
 
                         <Button type="submit" className="w-full">Send</Button>
                     </form>
+                           {message && <p className="text-green-500 mt-4">{message}</p>}
+                    {error && <p className="text-red-500 mt-4">{error}</p>}
                 </Card>
 
                 {/* Text Column */}
@@ -129,8 +131,7 @@ export default function ContactForm() {
                         <li>Saturday: 7 AM - 7 PM</li>
                         <li>Sunday: Closed</li>
                     </motion.ul>
-                    {message && <p className="text-green-500 mt-4">{message}</p>}
-                    {error && <p className="text-red-500 mt-4">{error}</p>}
+             
                 </Card>
             </div>
         </main>
