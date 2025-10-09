@@ -1,18 +1,17 @@
 'use client'; // Ensure this file is treated as a Client Component
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image'; // Import the Image component
 
 export default function Services() {
-  const [selectedService, setSelectedService] = useState<string | null>(null);
+
 
   const services = [
-    { name: 'Ambulatory Transport', description: 'Safe rides for patients who can walk independently.' },
-    { name: 'Wheelchair Transportation', description: 'Accessible vehicles and trained drivers to assist wheelchair users with care and safety.' },
-    { name: 'Dialysis Transportation', description: 'Recurring rides for patients needing regular dialysis treatments.' },
-    { name: ' Clinic & Hospital Appointments', description: 'On-time service for medical visits, procedures, and therapy sessions.' },
-    { name: ' Flexible Scheduling', description: ' Weekdays, weekends, and after-hours rides available.' },
+    { name: '🚐 Ambulatory Transport', description: 'Safe rides for patients who can walk independently.' },
+    { name: '🦽 Wheelchair Transportation', description: 'Accessible vehicles and trained drivers to assist wheelchair users with care and safety.' },
+    { name: '💧 Dialysis Transportation', description: 'Recurring rides for patients needing regular dialysis treatments.' },
+    { name: '🏥 Clinic & Hospital Appointments', description: 'On-time service for medical visits, procedures, and therapy sessions.' },
+    { name: '🕓 Flexible Scheduling', description: ' Weekdays, weekends, and after-hours rides available.' },
    
   ];
 
@@ -28,7 +27,7 @@ export default function Services() {
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 flex items-center justify-center h-full">
-          <h1 className="text-4xl text-white font-bold">Our Services</h1>
+          <h1 className="text-4xl text-white font-bold">Our Transport Service</h1>
         </div>
       </motion.div>
 
@@ -60,9 +59,10 @@ export default function Services() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-2xl font-semibold mb-4">Transportation You Can Count On</h2>
+        
           <p>
-           We specialize in safe and reliable non-emergency medical transportation, providing both ambulatory and wheelchair-accessible rides for patients and facilities.
+          At LATX Transportation, we proudly provide safe, reliable, and compassionate non-emergency medical transportation (NEMT) for individuals who need a dependable ride to and from their appointments.
+Every trip is handled with care, professionalism, and attention to detail — because your comfort and safety matter most.
           </p>
         </motion.div>
       </div>
@@ -76,7 +76,7 @@ export default function Services() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-2xl font-semibold">Our Services</h2>
+          <h2 className="text-2xl font-semibold">🩺 Our Services</h2>
         </motion.div>
 
         {/* Right Column - Services List */}
@@ -86,23 +86,34 @@ export default function Services() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <ul className="list-disc list-inside">
-            {services.map((service, index) => (
-              <li key={index} className="mb-4">
-                <span
-                  className="cursor-pointer font-bold text-blue-600 hover:text-purple-600"
-                  onClick={() => setSelectedService(selectedService === service.name ? null : service.name)}
-                >
-                  {service.name}
-                </span>
-                {selectedService === service.name && (
-                  <div className="mt-2 pl-4 text-gray-700">{service.description}</div>
-                )}
-              </li>
-            ))}
-          </ul>
+ <ul className=" list-inside">
+  {services.map((service, index) => (
+    <motion.li
+      key={index}
+      className="mb-4 text-gray-700"
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <span className="font-bold text-blue-600 hover:text-purple-600 transition-colors duration-300">
+        {service.name}
+      </span>{" - "}
+      <span>{service.description}</span>
+    </motion.li>
+  ))}
+</ul>
+
+
         </motion.div>
+        
       </div>
+ <div className="w-full bg-gray-100 p-8 text-center">
+  <h3 className="text-2xl font-semibold">Service Area:</h3>
+  <p className="mt-2 text-gray-700 text-lg tracking-wider">
+    Austin, Texas and surrounding central Texas <br />counties: Travis, Williamson, Hays, Bell, Burnet, <br />Bastrop, Lee, Caldwell, Comal, McLennan.
+  </p>
+</div>
     </div>
   );
 }

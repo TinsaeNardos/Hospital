@@ -1,6 +1,7 @@
 import { programs } from '@/lib/constants'
 import * as motion from 'motion/react-client'
 import { Card, CardContent } from './ui/card'
+
 import Image from 'next/image'
 export default function Programs(){
   return <section className="py-20 bg-background">

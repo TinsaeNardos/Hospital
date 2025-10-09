@@ -31,7 +31,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: "easeInOut" }} 
             className="text-5xl md:text-7xl font-black font-heading mb-6 leading-tighter"
           >
-            Your Safe Journey <br /><span className="text-primary">Starts Here</span>
+           Reliable Care & Safe Rides <br /><span className="text-primary">Every Time</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 12 }} 
@@ -39,7 +39,7 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.7 }} 
             className="text-xl md:text-2xl mb-8 font-light leading-relaxed max-w-3xl mx-auto"
           >
-           Your Trusted Partner in Safe and Reliable Medical Transport
+         Serving Austin and surrounding areas with reliable, compassionate medical transport
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 12 }} 

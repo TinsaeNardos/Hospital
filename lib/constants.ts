@@ -1,4 +1,4 @@
-
+import { Car } from "lucide-react";
 export const navItems=[
   { name: "Home", href: "/"},
   { name: "About Us", href: "/about"},
@@ -6,8 +6,9 @@ export const navItems=[
   { name: "Contact Us", href: "/contactus"},
 ];
 export const programs=[
-  {title:"Ambulatory Transport",description:" Safe and comfortable rides for patients who can walk independently, ensuring timely arrivals for appointments." ,image:"/ambulance.jpg"},
-    {title:"Special Trips",description:"Tailored transportation for unique needs, including long-distance journeys and group outings, with personalized care.",image:"/location.jpg"},
-      {title:"Wheelchair Transport",description:"Fully accessible vehicles equipped for wheelchair users, prioritizing safety and ease for every journey.",image:"/wheelchair.jpg"},
-        {title:"Non-Emergency Transport",description:"Dependable transport for routine medical visits, ensuring patients reach their destinations without stress or hassle",image:"/organ.jpg"}
+  {title:" 🚙 Ambulatory Transport",description:" Comfortable, safe rides for patients who walk independently but need reliable transportation to appointments." ,image:"/new.jpg"},
+  
+    {title:"🚐 Wheelchair Transportation",description:"Safe, accessible rides with ADA-compliant vehicles and lift-equipped support for passengers with mobility needs.",image:"/new1.jpg"},
+      {title:"🏥 Outpatient Procedures",description:"Reliable, door-to-door rides for same-day surgeries and important medical appointments .",image:"/new2.jpg"},
+        {title:"💧Dialysis Appointments",description:"On-time, comfortable transport for patients attending regular dialysis treatments for their health.",image:"/new3.jpg"}
 ];

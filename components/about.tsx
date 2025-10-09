@@ -36,23 +36,8 @@ export default function About() {
 
       {/* Content sections with Scroll Animation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Row 1 */}
-        <motion.div 
-          className="flex flex-col md:flex-row items-center mb-16" 
-          initial={{ y: 50, opacity: 0 }} 
-          whileInView={{ y: 0, opacity: 1 }} 
-          transition={{ duration: 0.5 }} 
-          viewport={{ once: false }}
-        >
-          <div className="md:w-1/2 md:order-2">
-            <Image src="/hofront.jpg" alt="Owner 1" width={500} height={500} className="rounded-lg" />
-          </div>
-          <div className="md:w-1/2 md:order-1">
-            <h2 className="text-2xl font-semibold">Owner</h2>
-            <p className="mt-4">With a distinguished career spanning 15 years in the skilled and long-term nursing field, Owner name has dedicated her expertise to ensuring safe and compassionate transportation for those in need. At LATX Transportation, she has found her calling at the intersection of healthcare and reliable transport, committed to providing exceptional service and support for every journey</p>
-          </div>
-        </motion.div>
-
+     
+        
         {/* Row 2 */}
         <motion.div 
           className="flex flex-col md:flex-row items-center mb-16" 
@@ -66,7 +51,7 @@ export default function About() {
           </div>
           <div className="md:w-1/2">
             <h2 className="text-2xl font-semibold">Our Mission</h2>
-            <p className="mt-4">At LATX Transportation, we strive to deliver dependable and caring non-emergency medical transportation. Our goal is to ensure that every client experiences a smooth and supportive journey, prioritizing their comfort and well-being at every step.</p>
+            <p className="mt-4">LATX Transportation is an Austin, Texas–based non-emergency medical transportation provider proudly serving Central Texas and surrounding areas. With a growing team and strong dedication to patient care, we take pride in offering safe, reliable, and compassionate ambulatory and wheelchair transportation.</p>
           </div>
         </motion.div>
 
@@ -99,8 +84,8 @@ export default function About() {
             <Image src="/our.jpg" alt="Owner 4" width={500} height={500} className="rounded-lg" />
           </div>
           <div className="md:w-1/2">
-            <h2 className="text-2xl font-semibold">Your Safety, Our Priority</h2>
-            <p className="mt-4">At LATX Transportation, your safety is our utmost concern. We implement rigorous safety protocols and maintain our vehicles to the highest standards, ensuring a secure and reliable journey for every client. Our trained staff is dedicated to providing compassionate care, giving you peace of mind throughout your transport experience</p>
+            <h2 className="text-2xl font-semibold">Your Safety, Our Promise</h2>
+            <p className="mt-4">At LATX Transportation, your safety and comfort come first. We follow strict safety standards and keep our vehicles in top condition to ensure a secure, dependable ride every time. Our professional drivers and caring staff are dedicated to delivering compassionate, respectful service—giving you confidence and peace of mind from pickup to drop-off.</p>
           </div>
         </motion.div>
       </div>
