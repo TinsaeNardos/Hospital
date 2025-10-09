@@ -51,7 +51,7 @@ export default function About() {
           </div>
           <div className="md:w-1/2">
             <h2 className="text-2xl font-semibold">Our Mission</h2>
-            <p className="mt-4">LATX Transportation is an Austin, Texas–based non-emergency medical transportation provider proudly serving Central Texas and surrounding areas. With a growing team and strong dedication to patient care, we take pride in offering safe, reliable, and compassionate ambulatory and wheelchair transportation.</p>
+            <p className="mt-4">LATX Transportation is an Austin, Texas–based non-emergency medical transportation provider proudly serving Central Texas and surrounding areas. With a growing team and strong dedication to patient care, we take pride in offering safe, reliable, and compassionate ambulatory and wheelchair transportations.</p>
           </div>
         </motion.div>
 
