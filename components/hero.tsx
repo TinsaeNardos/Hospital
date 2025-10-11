@@ -2,18 +2,14 @@
 import * as motion from 'motion/react-client';
 
 import { Button } from "./ui/button";
-import { useState } from 'react';
+
 
 export default function Hero() {
 
 
 const handleCallClick = () => {
-  window.location.href = "tel:+251973747282"; // triggers call
+  window.location.href = "tel:+1 (737) 363-9064"; // triggers call
 };
-
-
-
-
 
 
   return (
@@ -68,16 +64,7 @@ const handleCallClick = () => {
             >
               CALL
             </Button>
-   <Button
-  size="lg"
-  variant="outline"
-  className="bg-transparent text-lg font-semibold transition-transform duration-300 hover:scale-105 px-8"
-  onClick={() => {
-    window.location.href = "mailto:tinsaetesfaye2003@gmail.com";
-  }}
->
-  EMAIL
-</Button>
+   
 
 
           </motion.div>
