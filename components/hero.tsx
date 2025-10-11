@@ -5,15 +5,16 @@ import { Button } from "./ui/button";
 import { useState } from 'react';
 
 export default function Hero() {
-  const [contactInfo, setContactInfo] = useState<string | null>(null);
 
-  const handleCallClick = () => {
-    setContactInfo("+1 (737) 363-9064");
-  };
 
-  const handleEmailClick = () => {
-    setContactInfo("Latxtransportation2023@gmail.com");
-  };
+const handleCallClick = () => {
+  window.location.href = "tel:+251973747282"; // triggers call
+};
+
+
+
+
+
 
   return (
     <section className="h-screen relative flex items-center justify-center overflow-hidden pt-16"> 
@@ -67,19 +68,20 @@ export default function Hero() {
             >
               CALL
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="bg-transparent text-lg font-semibold transition-transform duration-300 hover:scale-105 px-8"
-              onClick={handleEmailClick} // Email button click handler
-            >
-              EMAIL
-            </Button>
+   <Button
+  size="lg"
+  variant="outline"
+  className="bg-transparent text-lg font-semibold transition-transform duration-300 hover:scale-105 px-8"
+  onClick={() => {
+    window.location.href = "mailto:tinsaetesfaye2003@gmail.com";
+  }}
+>
+  EMAIL
+</Button>
+
+
           </motion.div>
-          {/* Display contact information */}
-          {contactInfo && (
-            <p className="mt-4 text-lg font-bold text-white">{contactInfo}</p>
-          )}
+        
         </div>
       </div>
       {/* Scroll Indicator */}
