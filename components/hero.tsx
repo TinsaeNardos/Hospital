@@ -23,15 +23,14 @@ export default function Hero() {
 <div className="absolute inset-0">
   <video
     className="w-full h-full object-cover"
+    src="/hero.mp4"       // Make sure the video is in /public
     autoPlay
     loop
     muted
     playsInline
     preload="auto"
-  >
-    <source src="/hero.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+    poster="/hero.jpg"    // fallback image while loading
+  />
   <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay */}
 </div>
 
