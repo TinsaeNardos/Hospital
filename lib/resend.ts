@@ -51,7 +51,8 @@ const message = formData.get("message") as string;
         <li><strong>Notes:</strong> ${message}</li>
     </ul></div>`
         });
-         return { success: true, message: "Submission successful Our team will contact you shortly to confirm details." };
+        return { success: true }; // No message needed
+
         //return { success: true }; // Indicate success - Can't use with redirect
     } catch (error) {
         return { success: false, message: "Error sending email." };

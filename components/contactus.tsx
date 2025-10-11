@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
 import { useState, useRef } from 'react'; // add useRef here
+import { useRouter } from "next/navigation"; // Add this import
 
 import { sendEmail } from "@/lib/resend";
 import { Button } from "@/components/ui/button"; 
@@ -16,6 +17,7 @@ export default function ContactForm() {
     const [message, setMessage] = useState(""); // State for success messages
     const [error, setError] = useState(""); // State for error messages
     const formRef = useRef<HTMLFormElement>(null); // create form ref
+const router = useRouter(); // Add this inside ContactForm()
 
 
     // Explicitly type the event parameter
@@ -28,13 +30,14 @@ export default function ContactForm() {
         
         const response = await sendEmail(formData); // Call your sendEmail function
 
-        if (response.success) {
-            setMessage(response.message); // Set success message
-            formRef.current?.reset(); // clear form safely
+       if (response.success) {
+    formRef.current?.reset();     // Clear form safely
+    router.push("/thanks");    // Redirect to thank-you page
+} else {
+setError(response.message || "Something went wrong.");
+ // Set error message
+}
 
-        } else {
-            setError(response.message); // Set error message
-        }
     };
 
     return (
