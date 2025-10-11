@@ -11,7 +11,7 @@ export default function footer()
         <div className="col-span-1 md:col-span-2 ">
            <Link href="/">
        <div className="flex flex-col leading-none">
-                <span className="text-xl font-extrabold text-[red] tracking-tight">
+                <span className="text-xl font-extrabold text-[black] tracking-tight">
                   LATX
                 </span>
                 <span className="text-[10px] tracking-[0.25em] text-[black] font-bold">
