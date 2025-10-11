@@ -9,7 +9,16 @@ export default function footer()
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/*brand*/}
         <div className="col-span-1 md:col-span-2 ">
-          <h3 className="text-3xl font-black font-heading text-primary mb-4">Health Logo</h3>
+           <Link href="/">
+       <div className="flex flex-col leading-none">
+                <span className="text-xl font-extrabold text-[red] tracking-tight">
+                  LATX
+                </span>
+                <span className="text-[10px] tracking-[0.25em] text-[black] font-bold">
+                  TRANSPORTATION
+                </span>
+              </div>
+              </Link>
           <div className="flex space-x-4">
            <Link 
   href="https://www.instagram.com/Latx_transportation" 

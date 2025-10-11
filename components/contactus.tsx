@@ -2,18 +2,21 @@
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
+import { useState, useRef } from 'react'; // add useRef here
 
 import { sendEmail } from "@/lib/resend";
 import { Button } from "@/components/ui/button"; 
 import { Input } from "@/components/ui/input";  
 import { Textarea } from "@/components/ui/textarea"; 
 import { Card } from "@/components/ui/card"; 
-import { useState } from 'react';
+
 import React from 'react';
 
 export default function ContactForm() {
     const [message, setMessage] = useState(""); // State for success messages
     const [error, setError] = useState(""); // State for error messages
+    const formRef = useRef<HTMLFormElement>(null); // create form ref
+
 
     // Explicitly type the event parameter
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -27,6 +30,8 @@ export default function ContactForm() {
 
         if (response.success) {
             setMessage(response.message); // Set success message
+            formRef.current?.reset(); // clear form safely
+
         } else {
             setError(response.message); // Set error message
         }
@@ -34,11 +39,12 @@ export default function ContactForm() {
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between pt-24 px-6 md:px-24">
-
+          {message && <p className="text-green-500 mt-4">{message}</p>}
+                    {error && <p className="text-red-500 mt-4">{error}</p>}
             <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto space-y-4 md:space-y-0">
                 {/* Contact Form Column */}
                 <Card className="flex-1 p-6">
-                    <form onSubmit={handleSubmit} className="space-y-4"> {/* Use onSubmit instead of action */}
+                    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4"> {/* Use onSubmit instead of action */}
                         <label htmlFor="name">Full Name</label>
                         <Input type="text" id="name" name="name" required />
 
@@ -75,8 +81,7 @@ export default function ContactForm() {
 
                         <Button type="submit" className="w-full">Send</Button>
                     </form>
-                           {message && <p className="text-green-500 mt-4">{message}</p>}
-                    {error && <p className="text-red-500 mt-4">{error}</p>}
+                 
                 </Card>
 
                 {/* Text Column */}
