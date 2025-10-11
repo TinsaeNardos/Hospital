@@ -19,7 +19,19 @@ export default function Hero() {
     <section className="h-screen relative flex items-center justify-center overflow-hidden pt-16"> 
     
    <div className="absolute inset-0">
-   <Image src="/fr.jpg" alt="hospital backgroung" fill className="object-cover object-center" />
+  {/* Video Background */}
+<div className="absolute inset-0">
+  <video
+    className="w-full h-full object-cover"
+    src="/hero.mp4"  // Replace with your video file path
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+  <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay */}
+</div>
+
 
   <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay */}
 </div>

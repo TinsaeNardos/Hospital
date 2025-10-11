@@ -13,14 +13,14 @@ export default function Navbar() {
           <div>
             <Link href="/" className="flex items-center space-x-3 group">
               {/* Replace the Truck icon with your car image */}
-              <div className="w-8 h-8 relative group-hover:scale-105 transition-transform duration-200">
-                <Image
-                  src="/log.jpg" // path to your car photo in public folder
-                  alt="LATX Car"
-                  fill
-                  className="object-contain"
-                />
-              </div>
+    <div className="w-12 h-12 relative group-hover:scale-105 transition-transform duration-200 flex items-center">
+  <Image
+    src="/log.jpg" // path to your car photo in public folder
+    alt="LATX Car"
+    fill
+    className="object-contain"
+  />
+</div>
               <div className="flex flex-col leading-none">
                 <span className="text-xl font-extrabold text-[black] tracking-tight">
                   LATX
