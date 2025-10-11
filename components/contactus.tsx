@@ -33,7 +33,8 @@ export default function ContactForm() {
     };
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-6 md:p-24">
+        <main className="flex min-h-screen flex-col items-center justify-between pt-24 px-6 md:px-24">
+
             <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto space-y-4 md:space-y-0">
                 {/* Contact Form Column */}
                 <Card className="flex-1 p-6">
@@ -102,7 +103,7 @@ export default function ContactForm() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }} // Slight delay
                     >
-                        <span className="mr-2">📧 Email</span> Letextransport@gmail.com
+                        <span className="mr-2">📧 Email</span> Latxtransportation2023@gmail.com
                     </motion.p>
                     <motion.p
                         className="mb-2"
