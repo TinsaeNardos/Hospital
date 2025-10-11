@@ -8,8 +8,9 @@ export default function Hero() {
 
 
 const handleCallClick = () => {
-  window.location.href = "tel:+1 (737) 363-9064"; // triggers call
+  window.location.href = "tel:+17373639064"; // triggers call
 };
+
 
 
   return (
