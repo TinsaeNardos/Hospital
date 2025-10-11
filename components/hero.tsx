@@ -29,7 +29,7 @@ export default function Hero() {
     playsInline
     preload="auto"
   >
-    <source src="/background.mp4" type="video/mp4" />
+    <source src="/hero.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
   <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay */}
