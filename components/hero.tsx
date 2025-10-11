@@ -37,7 +37,7 @@ export default function Hero() {
         {/* Fallback Image for Small Screens */}
         <div className="absolute inset-0 md:hidden">
           <Image
-            src="/new.jpg" // Fallback image for mobile
+            src="/fr.jpg" // Fallback image for mobile
             alt="Fallback Image"
             layout="fill"
             className="object-cover"
