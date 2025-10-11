@@ -34,6 +34,14 @@ export default function About() {
     Transportation Tailored for Your Needs.
   </motion.p>
 </section>
+<motion.p 
+  className="text-gray-600 text-base md:text-lg font-medium mt-4 text-left w-full px-4 sm:px-6 lg:px-8"
+  initial={{ y: 30, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.6, delay: 0.4 }}
+>
+  LATX Transportation is an Austin, Texas–based non-emergency medical transportation provider proudly serving Central Texas and surrounding areas. With a growing team and strong dedication to patient care, we take pride in offering safe, reliable, and compassionate ambulatory and wheelchair transportation.
+</motion.p>
 
 
       {/* Content sections with Scroll Animation */}
@@ -66,7 +74,7 @@ export default function About() {
           viewport={{ once: false }}
         >
           <div className="md:w-1/2 md:order-2">
-            <Image src="/in.jpg" alt="Owner 3" width={500} height={500} className="rounded-lg" />
+            <Image src="/new.jpg" alt="Owner 3" width={500} height={500} className="rounded-lg" />
           </div>
           <div className="md:w-1/2 md:order-1">
             <h2 className="text-2xl font-semibold">Your Safety, Our Promise</h2>

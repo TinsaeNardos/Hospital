@@ -8,7 +8,7 @@ export default function Hero() {
   const [contactInfo, setContactInfo] = useState<string | null>(null);
 
   const handleCallClick = () => {
-    setContactInfo("+2519046654");
+    setContactInfo("+1 (737) 363-9064");
   };
 
   const handleEmailClick = () => {

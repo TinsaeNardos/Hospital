@@ -1,5 +1,8 @@
 "use client";
 import { motion } from 'framer-motion';
+import { Facebook, Instagram, Youtube } from "lucide-react";
+import Link from "next/link";
+
 import { sendEmail } from "@/lib/resend";
 import { Button } from "@/components/ui/button"; 
 import { Input } from "@/components/ui/input";  
@@ -107,7 +110,8 @@ export default function ContactForm() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }} // Slight delay
                     >
-                        <span className="mr-2">📞 Call/Text</span> 512 945-4047
+                        <span className="mr-2">📞 Call/Text</span> +1 (737) 363-9064
+                      
                     </motion.p>
                     <motion.h3
                         className="font-bold mt-4"
@@ -131,6 +135,21 @@ export default function ContactForm() {
                         <li>Saturday:6 AM - 6 PM</li>
                         <li>Sunday: Closed</li>
                     </motion.ul>
+                   <motion.p
+                        className="font-bold mt-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8 }} // Slight delay
+                    >
+                        <span className="mr-2">           <Link 
+  href="https://www.instagram.com/Latx_transportation" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="w-10 h-10 bg-blue-800/40 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300"
+> 
+  <Instagram className="w-5 h-5" />
+</Link></span> 
+                    </motion.p>  
              
                 </Card>
             </div>

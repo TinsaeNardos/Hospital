@@ -11,15 +11,16 @@ export default function footer()
         <div className="col-span-1 md:col-span-2 ">
           <h3 className="text-3xl font-black font-heading text-primary mb-4">Health Logo</h3>
           <div className="flex space-x-4">
-            <Link href="/" className="w-10 h-10 bg-gray-800/40 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300"> 
-            <Instagram className="w-5 h-5"/>
-            </Link>
-             <Link href="/" className="w-10 h-10 bg-gray-800/40 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300"> 
-            <Facebook className="w-5 h-5"/>
-            </Link>
-             <Link href="/" className="w-10 h-10 bg-gray-800/40 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300"> 
-            <Youtube className="w-5 h-5"/>
-            </Link>
+           <Link 
+  href="https://www.instagram.com/Latx_transportation" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="w-10 h-10 bg-gray-800/40 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300"
+> 
+  <Instagram className="w-5 h-5" />
+</Link>
+
+            
           </div>
         </div>
         {/*resources*/}
@@ -44,10 +45,10 @@ export default function footer()
         <div>
           <h4 className="text-lg font-bold font-heading mb-4">Contact Info</h4>
           <div className="space-y-3">
-            <p><span className="mr-2">📞</span>      09114567890987</p>
+            <p><span className="mr-2">📞</span>+1 (737) 363-9064</p>
        <p className="whitespace-nowrap"><span className="mr-2">📧</span>Latxtransportation2023@gmail.com</p>
 
-              <p><span className="mr-2">📍</span> megenagha,civil service</p>
+              <p><span className="mr-2">📍</span> Austin</p>
           </div>
         </div>
       </div>

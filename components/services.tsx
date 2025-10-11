@@ -44,7 +44,7 @@ export default function Services() {
           transition={{ duration: 0.7 }}
         >
           <Image
-            src="/fr2.jpg" // Use Image component
+            src="/servi.jpg" // Use Image component
             alt="Service Image"
             className="rounded-lg shadow-lg w-full h-auto max-w-md"
             width={800} // Provide width
