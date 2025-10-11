@@ -123,12 +123,12 @@ export default function ContactForm() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 1 }} // Slight delay
                     >
-                        <li>Monday: 7 AM - 7 PM</li>
-                        <li>Tuesday: 7 AM - 7 PM</li>
-                        <li>Wednesday: 7 AM - 7 PM</li>
-                        <li>Thursday: 7 AM - 7 PM</li>
-                        <li>Friday: 7 AM - 7 PM</li>
-                        <li>Saturday: 7 AM - 7 PM</li>
+                        <li>Monday: 6 AM - 6 PM</li>
+                        <li>Tuesday: 6 AM - 6 PM</li>
+                        <li>Wednesday:6 AM - 6 PM</li>
+                        <li>Thursday: 6 AM - 6 PM</li>
+                        <li>Friday:6 AM - 6 PM</li>
+                        <li>Saturday:6 AM - 6 PM</li>
                         <li>Sunday: Closed</li>
                     </motion.ul>
              

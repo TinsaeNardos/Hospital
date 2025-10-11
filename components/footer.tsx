@@ -45,13 +45,9 @@ export default function footer()
           <h4 className="text-lg font-bold font-heading mb-4">Contact Info</h4>
           <div className="space-y-3">
             <p><span className="mr-2">📞</span>      09114567890987</p>
-              <p><span className="mr-2">📧</span> 
-          
-              Letx@gmail.com
-              </p>
-              <p><span className="mr-2">📍</span>
-        
-              megenagha,civil service</p>
+       <p className="whitespace-nowrap"><span className="mr-2">📧</span>Latxtransportation2023@gmail.com</p>
+
+              <p><span className="mr-2">📍</span> megenagha,civil service</p>
           </div>
         </div>
       </div>

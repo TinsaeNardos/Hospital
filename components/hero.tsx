@@ -12,7 +12,7 @@ export default function Hero() {
   };
 
   const handleEmailClick = () => {
-    setContactInfo("Latex@email");
+    setContactInfo("Latxtransportation2023@gmail.com");
   };
 
   return (

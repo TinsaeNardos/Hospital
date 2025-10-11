@@ -13,12 +13,12 @@ export default function Navbar()
   <div>
  {/* Logo Section */}
 <Link href="/" className="flex items-center space-x-3 group">
-  <Truck className="w-8 h-8 text-[#0056B8] group-hover:scale-105 transition-transform duration-200" />
+  <Truck className="w-8 h-8 text-[red] group-hover:scale-105 transition-transform duration-200" />
   <div className="flex flex-col leading-none">
-    <span className="text-xl font-extrabold text-[#0A2E75] tracking-tight">
+    <span className="text-xl font-extrabold text-[black] tracking-tight">
       LATX
     </span>
-    <span className="text-[10px] tracking-[0.25em] text-[#0A2E75] font-semibold">
+    <span className="text-[10px] tracking-[0.25em] text-[black] font-semibold">
       TRANSPORTATION
     </span>
   </div>
