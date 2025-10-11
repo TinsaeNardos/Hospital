@@ -1,6 +1,5 @@
-"use client"; // Ensure this is a Client Component
+"use client";
 import * as motion from 'motion/react-client';
-import Image from "next/image";
 import { Button } from "./ui/button";
 import { useState } from 'react';
 
@@ -11,40 +10,30 @@ export default function Hero() {
   const handleEmailClick = () => setContactInfo("Latxtransportation2023@gmail.com");
 
   return (
-    <section className="h-screen relative flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative w-full h-screen overflow-hidden pt-16">
       
-      {/* Background Video / Image */}
-      <div className="absolute inset-0">
-        {/* Video for medium screens and above */}
-        <video
-          className="w-full h-full object-cover hidden sm:block"
-          src="/hero.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          poster="/hero.jpg"
-        />
+      {/* Video Background */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        src="/hero.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        poster="/hero.jpg"
+      />
 
-        {/* Fallback image for small screens */}
-        <img
-          src="/hero.jpg"
-          alt="Hero"
-          className="w-full h-full object-cover sm:hidden"
-        />
-
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
-      </div>
+      {/* Dark overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-white text-center px-4 max-w-4xl">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 max-w-4xl mx-auto text-white">
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
-          className="text-5xl md:text-7xl font-black font-heading mb-6 leading-tighter"
+          transition={{ duration: 0.7 }}
+          className="text-5xl md:text-7xl font-black mb-6 leading-tight"
         >
           Reliable Care & Safe Rides <br />
           <span className="text-primary">Every Time</span>
@@ -54,7 +43,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.7 }}
-          className="text-xl md:text-2xl mb-8 font-light leading-relaxed max-w-3xl mx-auto"
+          className="text-xl md:text-2xl mb-8 font-light max-w-3xl"
         >
           Serving Austin and surrounding areas with reliable, compassionate medical transport
         </motion.p>
@@ -62,7 +51,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          transition={{ delay: 0.4, duration: 0.7 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Button
