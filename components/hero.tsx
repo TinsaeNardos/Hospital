@@ -1,6 +1,6 @@
 "use client"; // Ensure this is a Client Component
 import * as motion from 'motion/react-client';
-import Image from "next/image";
+
 import { Button } from "./ui/button";
 import { useState } from 'react';
 
@@ -19,7 +19,7 @@ export default function Hero() {
     <section className="h-screen relative flex items-center justify-center overflow-hidden pt-16"> 
       <div className="absolute inset-0">
         {/* Video Background */}
-        <div className="absolute inset-0 md:block">
+        <div className="absolute inset-0">
           <video
             className="w-full h-full object-cover"
             autoPlay
@@ -27,21 +27,11 @@ export default function Hero() {
             muted
             playsInline
             preload="auto"
-            poster="/new.jpg" // Add a poster image for better loading experience
+            
           >
             <source src="/hero.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay */}
-        </div>
-        {/* Fallback Image for Small Screens */}
-        <div className="absolute inset-0 md:hidden">
-          <Image
-            src="/fr.jpg" // Fallback image for mobile
-            alt="Fallback Image"
-            layout="fill"
-            className="object-cover"
-          />
           <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay */}
         </div>
       </div>
