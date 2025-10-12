@@ -33,7 +33,7 @@ const message = formData.get("message") as string;
 
     try {
         const data = await resend.emails.send({
-            to: "tinsaetesfaye2003@gmail.com",
+            to: "latxtransportation2023@gmail.com",
             from: "OrcDev <onboarding@resend.dev>",
             subject: "Contact Form Submission",
             html: `    <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #333;">
